@@ -31,3 +31,10 @@ m -j16 wpa_supplicant # First build
 aninja wpa_supplicant # Incremental build
 file out/target/product/vsoc_x86_64_only/vendor/bin/hw/wpa_supplicant
 ```
+
+References
+
+- [Android 15 (AOSP) Build with Podman on Ubuntu 24.04](https://www.maksonlee.com/android-15-aosp-build-with-podman-on-ubuntu-24-04/)
+- [Build Android 15 AOSP with Docker on Ubuntu 24.04](https://www.maksonlee.com/build-android-15-aosp-with-docker-on-ubuntu-24-04/)
+- [Build Android](https://source.android.com/docs/setup/build)
+- [Download the Android source](https://source.android.com/docs/setup/download)
