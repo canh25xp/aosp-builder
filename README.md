@@ -15,9 +15,19 @@ podman build -t aosp-builder .
 podman run -it --rm -v $HOME/projects/aosp:/aosp -v $HOME/.cache/ccache:/ccache aosp-builder bash
 ```
 
+> [!NOTE]
+> If you use `docker`, you should run it with your host user permissions
+
+```sh
+podman run -it --rm --user $(id -u):$(id -g) -v $HOME/projects/aosp:/aosp -v $HOME/.cache/ccache:/ccache aosp-builder bash
+```
+
 ## Test it
 
 ```sh
 source build/envsetup.sh
 lunch aosp_cf_x86_64_only_phone-aosp_current-userdebug
+m -j16 wpa_supplicant # First build
+aninja wpa_supplicant # Incremental build
+file out/target/product/vsoc_x86_64_only/vendor/bin/hw/wpa_supplicant
 ```
