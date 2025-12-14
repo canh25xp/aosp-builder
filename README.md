@@ -1,5 +1,8 @@
 # AOSP Build Docker image
 
+Stolen from [aosp/build/make/tools/docker/](https://android.googlesource.com/platform/build/+/refs/heads/main/tools/docker/)
+but `repo` is not included in the container, so you're supposed to run `repo init` and `repo sync` from the host.
+
 ## Build it
 
 ```sh
