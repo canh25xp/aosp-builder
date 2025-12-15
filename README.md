@@ -19,7 +19,7 @@ podman run -it --rm -v $HOME/projects/aosp:/aosp -v $HOME/.cache/ccache:/ccache 
 > If you use `docker`, you should run it with your host user permissions
 
 ```sh
-podman run -it --rm --user $(id -u):$(id -g) -v $HOME/projects/aosp:/aosp -v $HOME/.cache/ccache:/ccache aosp-builder bash
+docker run -it --rm --user $(id -u):$(id -g) -v $HOME/projects/aosp:/aosp -v $HOME/.cache/ccache:/ccache aosp-builder bash
 ```
 
 ## Test it
