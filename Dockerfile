@@ -35,5 +35,3 @@ WORKDIR /aosp
 COPY entrypoint.sh /usr/local/bin/aosp-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/aosp-entrypoint.sh"]
-
-CMD ["bash"]

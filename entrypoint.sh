@@ -12,4 +12,10 @@ if [ -f /aosp/.envrc ]; then
   source /aosp/.envrc
 fi
 
-exec "$@"
+# Default to 'bash' if no arguments are provided
+args="$@"
+if [ -z "$args" ]; then
+  args="bash"
+fi
+
+exec $args
