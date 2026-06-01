@@ -3,6 +3,20 @@
 Stolen from [aosp/build/make/tools/docker/](https://android.googlesource.com/platform/build/+/refs/heads/main/tools/docker/)
 but `repo` is not included in the container, so you're supposed to run `repo init` and `repo sync` from the host.
 
+TLDR:
+
+```sh
+sudo apt install repo
+mkdir aosp
+cd aosp
+repo init --partial-clone --no-use-superproject -b android-latest-release -u https://android.googlesource.com/platform/manifest
+repo sync -c -j8
+podman run -it --rm -v $PWD:/aosp ghcr.io/canh25xp/aosp-builder bash
+source build/envsetup.sh
+lunch aosp_cf_x86_64_only_phone-aosp_current-userdebug
+m
+```
+
 ## Build it
 
 ```sh
